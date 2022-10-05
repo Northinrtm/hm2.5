@@ -42,4 +42,9 @@ public class Car extends Transport implements Competing {
     protected void refill() {
         System.out.println("Car.refill()");
     }
+
+    @Override
+    void identifyAuto() {
+        System.out.println("Car.identifyAuto()");
+    }
 }

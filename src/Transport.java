@@ -24,4 +24,5 @@ public abstract class Transport {
             this.model = "не указана марка";
         }
     }
+    abstract void identifyAuto();
 }

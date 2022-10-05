@@ -32,9 +32,33 @@ public final class CarCargo extends Car {
             setLow(low);
             setHigh(high);
         }
+
+        public void identifyAuto(float f) {
+
+        }
     }
 
-    public CarCargo(String brand, String model, float engineVolume) {
+    public CarCargo(String brand, String model, float engineVolume, LoadCapasity loadCapasity) {
         super(brand, model, engineVolume);
+        setLoadCapasity(loadCapasity);
+    }
+
+    private LoadCapasity loadCapasity;
+
+    public LoadCapasity getLoadCapasity() {
+        return loadCapasity;
+    }
+
+    public void setLoadCapasity(LoadCapasity loadCapasity) {
+        this.loadCapasity = loadCapasity;
+    }
+
+    @Override
+    void identifyAuto() {
+        if (loadCapasity == null) {
+            System.out.println("данных по авто недостаточно");
+        } else {
+            System.out.println("грузоподьемность от " + loadCapasity.getLow() + " до " + loadCapasity.getHigh());
+        }
     }
 }

@@ -33,7 +33,27 @@ public final class Bus extends Car {
         }
     }
 
-    public Bus(String brand, String model, float engineVolume) {
+    public Bus(String brand, String model, float engineVolume, TypeCapasity typeCapasity) {
         super(brand, model, engineVolume);
+        setTypeCapasity(typeCapasity);
+    }
+
+    private TypeCapasity typeCapasity;
+
+    public TypeCapasity getTypeCapasity() {
+        return typeCapasity;
+    }
+
+    public void setTypeCapasity(TypeCapasity typeCapasity) {
+        this.typeCapasity = typeCapasity;
+    }
+
+    @Override
+    void identifyAuto() {
+        if (typeCapasity == null) {
+            System.out.println("данных по авто недостаточно");
+        } else {
+            System.out.println("вместимость от " + typeCapasity.getLow() + " до " + typeCapasity.getHigh());
+        }
     }
 }
